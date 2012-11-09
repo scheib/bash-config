@@ -1,0 +1,23 @@
+if [ -f ~/git-config/git-functions ]; then
+    . ~/git-config/git-functions
+fi
+
+find-up () {
+    path=$(pwd)
+    while [[ "$path" != "" && ! -e "$path/$1" ]]; do
+      path=${path%/*}
+    done
+    echo "$path"
+}
+
+# Find up could use a version that takes a second param of relateive
+# or absolute path. Not done yet. This works for child relative paths:
+#
+# find-up () {
+#     path=${2-$(pwd)}
+#     while [[ "$path" != "" && ! -e "$path/$1" ]]; do
+#       path=${path%/*}
+#     done
+#     echo "$path"
+# }
+

@@ -1,0 +1,13 @@
+if [ "$TERM" = "screen" ]; then
+  screen_set_window_title () {
+    local HPWD="$PWD"
+    case $HPWD in
+      $HOME) HPWD="~";;
+      #long# $HOME/*) HPWD="~${HPWD#$HOME}";;
+      *) HPWD=`basename "$HPWD"`;;
+    esac
+    printf '\ek%s\e\\' "$HPWD"
+  }
+  export PROMPT_COMMAND="screen_set_window_title; $PROMPT_COMMAND"
+fi
+
