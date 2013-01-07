@@ -1,8 +1,8 @@
 # Place the following in ~/.bashrc
 #
 #BASH_CONFIG_DIR=~/bash-config
-#if [ -f BASH_CONFIG_DIR/bashrc ]; then
-#    . BASH_CONFIG_DIR/bashrc
+#if [ -f $BASH_CONFIG_DIR/bashrc ]; then
+#    . $BASH_CONFIG_DIR/bashrc
 #fi
 
 if [ -f $BASH_CONFIG_DIR/aliases   ]; then . $BASH_CONFIG_DIR/aliases;   fi
