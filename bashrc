@@ -24,6 +24,9 @@ if [ -f /opt/local/share/git-core/git-prompt.sh ]; then
     . /opt/local/share/git-core/git-prompt.sh
 fi
 
+# Prompt
+PS1='${debian_chroot:+($debian_chroot)}\T:\[\033[01;34m\]\W\[\033[00m\]:\[\033[01;32m\]$(__git_ps1)\[\033[00m\]\$ '
+
 export EDITOR='vim'
 
 export LESS=RSJwij.3
