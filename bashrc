@@ -49,3 +49,10 @@ export VSLICKXNOPLUSNEWMSG=1
 if [ -d /opt/slickedit/bin ] ; then
     PATH="$PATH":/opt/slickedit/bin
 fi
+
+# Mac specific build setup for goma
+if [ `uname` == "Darwin" ]; then
+    export PATH=~c/src/third_party/llvm-build/Release+Asserts/bin:$PATH
+    export CC=clang
+    export CXX=clang++
+fi
