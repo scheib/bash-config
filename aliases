@@ -24,6 +24,8 @@ alias bpyd='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Debug pyautolib ch
 alias bpyd_='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Debug pyautolib chromedriver chrome && LD_LIBRARY_PATH=out/Debug/lib python chrome/test/functional/fullscreen_mouselock.py fullscreen_mouselock.FullscreenMouselockTest.testMouseLockInBrowserFS'
 alias buit='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release ui_tests && out/Release/ui_tests --gtest_filter="BrowserUITest.*" || notify-fail'
 alias but='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release unit_tests && out/Release/unit_tests --gtest_filter="*Fullscreen*:*FullScreen*:*Presentation*:*MouseLock*:*PointerLock*" || notify-fail'
+alias but_state='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release unit_tests && out/Release/unit_tests --gtest_filter="*STATE*" --gtest_also_run_disabled_tests || notify-fail'
+alias but_transitions_for_each_state='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release unit_tests && out/Release/unit_tests --gtest_filter="*TransitionsForEachState*" --gtest_also_run_disabled_tests || notify-fail'
 alias but_DebugLogStateTables='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release unit_tests && out/Release/unit_tests --gtest_filter="*DebugLogStateTables*" --gtest_also_run_disabled_tests || notify-fail'
 alias butd='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Debug unit_tests && out/Debug/unit_tests --gtest_filter="*Fullscreen*:*FullScreen*:*Presentation*:*MouseLock*:*PointerLock*" || notify-fail'
 alias clang-off='unset CC CXX'
