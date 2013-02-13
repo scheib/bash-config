@@ -49,3 +49,4 @@ alias r='if [ -e out/Release/chrome ]; then out/Release/chrome --register-pepper
 alias rd='if [ -e out/Debug/chrome ]; then out/Debug/chrome --register-pepper-plugins="out/Debug/lib/libppapi_example_mouse_lock.so;application/x-ppapi-example-mouse-lock"; else out/Debug/Chromium.app/Contents/MacOS/Chromium --register-pepper-plugins="out/Replication/x-ppapi-example-mouse-lock"; fi'
 alias rr='out/Release/browser_tests --gtest_filter="BrowserTest.TestFullscreenBubbleMouseLockState"'
 alias vsmulti='while read x; do vs $x; done'
+alias www-permissions='~/scheib/www/permisions.sh'
