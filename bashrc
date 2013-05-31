@@ -41,8 +41,8 @@ export P4DIFF=/home/build/public/google/tools/p4diff
 export P4MERGE=/home/build/public/eng/perforce/mergep4.tcl 
 export P4EDITOR=$EDITOR
 
-if [ -d `pwd`/depot_tools ] ; then
-    PATH="$PATH":`pwd`/depot_tools
+if [ -d ~/depot_tools ] ; then
+    PATH="$PATH":~/depot_tools
 fi
 
 export VSLICKXNOPLUSNEWMSG=1
