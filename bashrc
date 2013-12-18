@@ -29,7 +29,9 @@ export EDITOR='vim'
 
 export LESS=RSJwij.3
 
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+if [ ! BASH_CONFIG_SET ]; then
+    export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+fi
 HISTSIZE=10000
 
 export GYP_GENERATORS='ninja'
@@ -39,18 +41,17 @@ export P4DIFF=/home/build/public/google/tools/p4diff
 export P4MERGE=/home/build/public/eng/perforce/mergep4.tcl 
 export P4EDITOR=$EDITOR
 
-if [ -d ~/depot_tools ] ; then
-    PATH="$PATH":~/depot_tools
+if [ -d ~/depot_tools ]; then
+    if [ ! $BASH_CONFIG_SET ]; then
+        PATH="$PATH":~/depot_tools
+    fi
 fi
 
 export VSLICKXNOPLUSNEWMSG=1
-if [ -d /opt/slickedit/bin ] ; then
-    PATH="$PATH":/opt/slickedit/bin
+if [ -d /opt/slickedit/bin ]; then
+    if [ ! $BASH_CONFIG_SET ]; then
+        PATH="$PATH":/opt/slickedit/bin
+    fi
 fi
 
-# Mac specific build setup for goma
-if [ `uname` == "Darwin" ]; then
-    export PATH=~/goma:~/c/src/third_party/llvm-build/Release+Asserts/bin:$PATH
-    export CC=clang
-    export CXX=clang++
-fi
+export BASH_CONFIG_SET=true
