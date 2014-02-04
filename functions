@@ -21,3 +21,18 @@ find-up () {
 #     echo "$path"
 # }
 
+findi () {
+    if [[ $# -eq 0 ]]; then
+        echo 'Simplifies use of find -maxdepth 1 -iname "*...*"'
+        echo 'Usage: findi [path] "<wild-card term>"'
+        echo 'e.g. findi ~ ".c*"'
+        return 1
+    fi
+    path="."
+    if [[ $# -ge 2 ]]; then
+        path=$1
+        shift
+    fi
+    find $path -maxdepth 1 -iname "$1" 2> /dev/null
+}
+
