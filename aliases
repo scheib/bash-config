@@ -50,9 +50,8 @@ alias notify-fail='notify-send "Fail" "><><><><><><><><><><><><><><><><> <><><><
 alias notify-ok='notify-send "OK" "><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> ><><><><><><><><><><><><><><><><>" -i /usr/share/pixmaps/apple-green.png'
 alias notify='notify-ok || notify-fail'
 alias p="pushd +1"
-alias r='if [ -e out/Release/chrome ]; then out/Release/chrome --register-pepper-plugins="out/Release/lib/libppapi_example_mouse_lock.so;application/x-ppapi-example-mouse-lock"; else out/Release/Chromium.app/Contents/MacOS/Chromium --register-pepper-plugins="out/Replication/x-ppapi-example-mouse-lock"; fi'
-alias rd='if [ -e out/Debug/chrome ]; then out/Debug/chrome --register-pepper-plugins="out/Debug/lib/libppapi_example_mouse_lock.so;application/x-ppapi-example-mouse-lock"; else out/Debug/Chromium.app/Contents/MacOS/Chromium --register-pepper-plugins="out/Replication/x-ppapi-example-mouse-lock"; fi'
-alias rr='out/Release/browser_tests --gtest_filter="BrowserTest.TestFullscreenBubbleMouseLockState"'
+alias r='if [ -e out/Release/chrome ]; then out/Release/chrome; else out/Release/Chromium.app/Contents/MacOS/Chromium; fi'
+alias rd='if [ -e out/Debug/chrome ]; then out/Debug/chrome; else out/Debug/Chromium.app/Contents/MacOS/Chromium; fi'
 alias st='/usr/local/google/home/scheib/bin/Sublime\ Text\ 2/sublime_text'
 alias vsmulti='while read x; do vs $x; done'
 alias www-permissions='~/scheib/www/permisions.sh'
