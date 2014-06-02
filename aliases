@@ -26,7 +26,7 @@ alias bpy='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release pyautolib c
 alias bpy-='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release pyautolib chromedriver chrome && LD_LIBRARY_PATH=out/Debug/lib python chrome/test/functional/fullscreen_mouselock.py fullscreen_mouselock.FullscreenMouselockTest.testMouseLockInBrowserFS'
 alias bpyd='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Debug pyautolib chromedriver chrome && LD_LIBRARY_PATH=out/Debug/lib python chrome/test/functional/fullscreen_mouselock.py --chrome-flags="--enable-pointer-lock"'
 alias bpyd-='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Debug pyautolib chromedriver chrome && LD_LIBRARY_PATH=out/Debug/lib python chrome/test/functional/fullscreen_mouselock.py fullscreen_mouselock.FullscreenMouselockTest.testMouseLockInBrowserFS'
-alias bswall='build-all && bcut-sw && bcbt-sw && but-sw && bbt-sw || notify-fail'
+alias bswall='build-all && bcut-sw && bcbt-sw && but-sw && bbt-sw && echo "bswall test suites ran OK." || notify-fail'
 alias build-all='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release chrome ppapi_example_mouse_lock content_unittests content_browsertests unit_tests browser_tests || notify-fail'
 alias but-fs='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release unit_tests && out/Release/unit_tests --gtest_filter="*Fullscreen*:*FullScreen*:*Presentation*:*MouseLock*:*PointerLock*" || notify-fail'
 alias but-fs-DebugLogStateTables='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release unit_tests && out/Release/unit_tests --gtest_filter="*DebugLogStateTables*" --gtest_also_run_disabled_tests || notify-fail'
@@ -49,7 +49,7 @@ alias lupdate='git branch -D lkgr 1>/dev/null 2&>1; git lkgr | xargs git branch 
 alias ma='my_activity.py --output-format="- [{title}]({url})" | sed -e "s/^Changes:$/Changes:\n/g" | sed -e "s/^Reviews:$/Reviews:\n/g" | sed -e "s/^Issues:$/Issues:\n/g"'
 alias mount-tmpfs-out='sudo mount -t tmpfs -o size=50% tmpfs out'
 alias ninja-detect-goma='if [ -e ~/goma ]; then if [ `uname` == "Darwin" ]; then echo ninja -j 100; else echo ninja -j 700; fi; else echo ninja; fi'
-alias notify-fail='notify-send "Fail" "><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> ><><><><><><><><><><><><><><><><>" -i /usr/share/pixmaps/apple-red.png'
+alias notify-fail='(notify-send "Fail" "><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> ><><><><><><><><><><><><><><><><>" -i /usr/share/pixmaps/apple-red.png; exit 1)'
 alias notify-ok='notify-send "OK" "><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> <><><><><><><><><><><><><><><><>< ><><><><><><><><><><><><><><><><> ><><><><><><><><><><><><><><><><>" -i /usr/share/pixmaps/apple-green.png'
 alias notify='notify-ok || notify-fail'
 alias p="pushd +1"
