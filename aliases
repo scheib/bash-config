@@ -38,6 +38,7 @@ alias butd='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Debug unit_tests &
 alias clang-off='unset CC CXX'
 alias clang-on='export CC=clang; export CXX=clang++; echo $PATH | grep -q "llvm-build/Release+Asserts" || export PATH=~/chromium/src/third_party/llvm-build/Release+Asserts/bin:$PATH'
 alias containerissues='pushd src/py_issue_tracker/src && (./crbugtotrix.py -q Cr:Platform-Apps-Container --no-closed-bugs -s 0Ah8PJXs-5E92dEZ0dmdqbmw1c0FMTXUtMEhHNHZ5cVE; popd)'
+alias content_shell-requestDevice='PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release content_shell &&  /usr/local/google/home/scheib/c/src/out/Release/content_shell --dump-render-tree /usr/local/google/home/scheib/c/src/third_party/WebKit/LayoutTests/bluetooth/requestDevice.html'
 alias g='GYP_GENERATORS=ninja build/gyp_chromium'
 alias gasan='GYP_GENERATORS=ninja build/gyp_chromium -D asan=1 -D linux_use_tcmalloc=0 -D release_extra_cflags="-g" -D clang=1'
 alias gasand='GYP_GENERATORS=ninja build/gyp_chromium -D asan=1 -D linux_use_tcmalloc=0 -D release_extra_cflags="-g" -D clang=1'
