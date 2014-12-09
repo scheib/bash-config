@@ -47,6 +47,12 @@ if [ -d ~/depot_tools ]; then
     fi
 fi
 
+if [ -d ~/gsutil ]; then
+    if [ ! $BASH_CONFIG_SET ]; then
+        PATH="$PATH":~/gsutil
+    fi
+fi
+
 export VSLICKXNOPLUSNEWMSG=1
 if [ -d /opt/slickedit/bin ]; then
     if [ ! $BASH_CONFIG_SET ]; then
