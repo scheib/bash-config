@@ -59,6 +59,6 @@ alias notify='notify-ok || notify-fail'
 alias p="pushd +1"
 alias r='if [ -e out/Release/chrome ]; then out/Release/chrome; else out/Release/Chromium.app/Contents/MacOS/Chromium; fi'
 alias rd='if [ -e out/Debug/chrome ]; then out/Debug/chrome; else out/Debug/Chromium.app/Contents/MacOS/Chromium; fi'
-alias st='/usr/local/google/home/scheib/bin/Sublime\ Text\ 2/sublime_text'
+alias st='/opt/sublime_text/sublime_text'
 alias vsmulti='while read x; do vs $x; done'
 alias www-permissions='~/scheib/www/permisions.sh'
