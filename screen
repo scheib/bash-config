@@ -8,6 +8,8 @@ if [ "$TERM" = "screen" ]; then
     esac
     printf '\ek%s\e\\' "$HPWD"
   }
-  export PROMPT_COMMAND="screen_set_window_title; $PROMPT_COMMAND"
+  if [[ $PROMPT_COMMAND != *"screen_set_window_title"* ]]; then
+    export PROMPT_COMMAND="screen_set_window_title; $PROMPT_COMMAND"
+  fi
 fi
 

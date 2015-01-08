@@ -29,8 +29,8 @@ export EDITOR='vim'
 
 export LESS=RSJwij.3
 
-if [ ! BASH_CONFIG_SET ]; then
-    export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+if [[ $PROMPT_COMMAND != *"history -a"* ]]; then
+  export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 fi
 HISTSIZE=10000
 
@@ -41,23 +41,22 @@ export P4DIFF=/home/build/public/google/tools/p4diff
 export P4MERGE=/home/build/public/eng/perforce/mergep4.tcl 
 export P4EDITOR=$EDITOR
 
-if [ -d ~/depot_tools ]; then
-    if [ ! $BASH_CONFIG_SET ]; then
-        PATH="$PATH":~/depot_tools
-    fi
-fi
+if [ ! $BASH_CONFIG_SET ]; then
+  if [ -d ~/bin ]; then
+    PATH="$PATH":~/bin
+  fi
 
-if [ -d ~/gsutil ]; then
-    if [ ! $BASH_CONFIG_SET ]; then
-        PATH="$PATH":~/gsutil
-    fi
-fi
+  if [ -d ~/depot_tools ]; then
+    PATH="$PATH":~/depot_tools
+  fi
 
-export VSLICKXNOPLUSNEWMSG=1
-if [ -d /opt/slickedit/bin ]; then
-    if [ ! $BASH_CONFIG_SET ]; then
-        PATH="$PATH":/opt/slickedit/bin
-    fi
-fi
+  if [ -d ~/gsutil ]; then
+    PATH="$PATH":~/gsutil
+  fi
 
+  export VSLICKXNOPLUSNEWMSG=1
+  if [ -d /opt/slickedit/bin ]; then
+    PATH="$PATH":/opt/slickedit/bin
+  fi
+fi
 export BASH_CONFIG_SET=true
