@@ -1,6 +1,6 @@
 alias alias-update=". $BASH_CONFIG_DIR/aliases"
 alias aliasupdate="alias-update"
-alias b='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release chrome ppapi_example_mouse_lock && r || notify-fail'
+alias b='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release chrome && r || notify-fail'
 alias bb='build-all && r || notify-fail'
 alias bbt-='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release browser_tests && xvfb-run -s "-screen 0 1024x768x24" out/Release/browser_tests --gtest_filter="*xxx*" || notify-fail'
 alias bbt-ExtensionServiceWorkerBrowserTest='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release browser_tests && xvfb-run -s "-screen 0 1024x768x24" out/Release/browser_tests --gtest_filter="*ExtensionServiceWorkerBrowserTest*" || notify-fail'
@@ -15,8 +15,8 @@ alias bcbtd-sw='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Debug content_
 alias bct='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release content_unittests && xvfb-run -s "-screen 0 1024x768x24" out/Release/content_unittests --gtest_filter="*Fullscreen*:*FullScreen*:*Presentation*:*MouseLock*:*PointerLock*" || notify-fail'
 alias bctd='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Debug content_unittests && xvfb-run -s "-screen 0 1024x768x24" out/Debug/content_unittests --gtest_filter="*Fullscreen*:*FullScreen*:*Presentation*:*MouseLock*:*PointerLock*" || notify-fail'
 alias bcut-sw='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release content_unittests && xvfb-run -s "-screen 0 1024x768x24" out/Release/content_unittests --gtest_filter="*ServiceWorker*:*EmbeddedWorker*" || notify-fail'
-alias bd='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Debug chrome ppapi_example_mouse_lock && rd || notify-fail'
-alias bdb='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Debug chrome ppapi_example_mouse_lock content_unittests content_browsertests && rd || notify-fail'
+alias bd='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Debug chrome && rd || notify-fail'
+alias bdb='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Debug chrome content_unittests content_browsertests && rd || notify-fail'
 alias bdut='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release device_unittests && out/Release/device_unittests --gtest_filter="*Bluetooth*" || notify-fail'
 alias bdutd='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Debug device_unittests && out/Debug/device_unittests --gtest_filter="*Bluetooth*" || notify-fail'
 alias bblink-layout='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release blink_tests && blink/tools/run_layout_tests.sh bluetooth && notify'
@@ -30,7 +30,7 @@ alias bit-disabled-state='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Rele
 alias bit-TransitionsForEachState='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release interactive_ui_tests && xvfb-run -s "-screen 0 1024x768x24" out/Release/interactive_ui_tests --gtest_filter="FullscreenControllerStateInteractiveTest.DISABLED_TransitionsForEachState" --gtest_also_run_disabled_tests || notify-fail'
 alias bitd='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Debug interactive_ui_tests && xvfb-run -s "-screen 0 1024x768x24" out/Debug/interactive_ui_tests --gtest_filter="*Fullscreen*:*FullScreen*:*Presentation*:*MouseLock*:*PointerLock*" || notify-fail'
 alias bswall='build-all && bcut-sw && bcbt-sw && but-sw && bbt-sw && echo "bswall test suites ran OK." || notify-fail'
-alias build-all='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release chrome ppapi_example_mouse_lock content_unittests content_browsertests device_unittests unit_tests browser_tests || notify-fail'
+alias build-all='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release chrome content_unittests content_browsertests device_unittests unit_tests browser_tests || notify-fail'
 alias but-fs='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release unit_tests && xvfb-run -s "-screen 0 1024x768x24" out/Release/unit_tests --gtest_filter="*Fullscreen*:*FullScreen*:*Presentation*:*MouseLock*:*PointerLock*" || notify-fail'
 alias but-fs-DebugLogStateTables='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release unit_tests && xvfb-run -s "-screen 0 1024x768x24" out/Release/unit_tests --gtest_filter="*DebugLogStateTables*" --gtest_also_run_disabled_tests || notify-fail'
 alias but-fs-state='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release unit_tests && xvfb-run -s "-screen 0 1024x768x24" out/Release/unit_tests --gtest_filter="*STATE*" --gtest_also_run_disabled_tests || notify-fail'
