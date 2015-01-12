@@ -1,9 +1,9 @@
 alias alias-update=". $BASH_CONFIG_DIR/aliases"
 alias aliasupdate="alias-update"
 alias b='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release chrome && r || notify-fail'
-alias b2='time PATH=~/goma:$PATH `ninja-detect-goma` -C out2/Release chrome && r || notify-fail'
+alias b2='time PATH=~/goma:$PATH `ninja-detect-goma` -C out2/Release chrome && r2 || notify-fail'
 alias ball='build-all && r || notify-fail'
-alias ball2='build-all && r || notify-fail'
+alias ball2='build-all && r2 || notify-fail'
 alias bbt-='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release browser_tests && xvfb-run -s "-screen 0 1024x768x24" out/Release/browser_tests --gtest_filter="*xxx*" || notify-fail'
 alias bbt-ExtensionServiceWorkerBrowserTest='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release browser_tests && xvfb-run -s "-screen 0 1024x768x24" out/Release/browser_tests --gtest_filter="*ExtensionServiceWorkerBrowserTest*" || notify-fail'
 alias bbt-ExtensionServiceWorkerBrowserTest-SendOnLaunched='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release browser_tests && xvfb-run -s "-screen 0 1024x768x24" out/Release/browser_tests --gtest_filter="*ExtensionServiceWorkerBrowserTest*SendOnLaunched*" --gtest_also_run_disabled_tests || notify-fail'
