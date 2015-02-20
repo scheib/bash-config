@@ -1,3 +1,4 @@
+alias agdb='CHROMIUM_OUT_DIR=outandroid adb_gdb_chrome_shell'
 alias alias-update=". $BASH_CONFIG_DIR/aliases"
 alias aliasupdate="alias-update"
 alias alc="adb logcat"
