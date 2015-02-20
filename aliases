@@ -2,6 +2,7 @@ alias alias-update=". $BASH_CONFIG_DIR/aliases"
 alias aliasupdate="alias-update"
 alias alc="adb logcat"
 alias alcc="adb logcat -c && adb logcat"
+alias astack="adb logcat -d | CHROMIUM_OUT_DIR=outandroid third_party/android_platform/development/scripts/stack"
 alias b='time PATH=~/goma:$PATH `ninja-detect-goma` -C out/Release chrome && r || notify-fail'
 alias b2='time PATH=~/goma:$PATH `ninja-detect-goma` -C out2/Release chrome && r2 || notify-fail'
 alias bar='time PATH=~/goma:$PATH `ninja-detect-goma` -C outandroid/Release chrome_shell_apk && dar || notify-fail'
