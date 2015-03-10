@@ -55,7 +55,7 @@ alias dar='CHROMIUM_OUT_DIR=outandroid build/android/adb_install_apk.py --apk Ch
 alias da='CHROMIUM_OUT_DIR=outandroid build/android/adb_install_apk.py --apk ChromeShell.apk --debug || notify-fail'
 alias g='gclient runhooks'
 alias g2='GYP_GENERATOR_FLAGS="output_dir=out2" GYP_DEFINES="use_goma=1 clang=1 component=shared_library dcheck_always_on=1 chromeos=0" gclient runhooks'
-alias ga='GYP_GENERATOR_FLAGS="output_dir=outandroid" GYP_DEFINES="use_goma=1 clang=1 component=shared_library OS=android gyp_managed_install=1 create_standalone_apk=0" gclient runhooks'
+alias ga='GYP_GENERATOR_FLAGS="output_dir=outandroid" GYP_DEFINES="use_goma=1 clang=1 component=shared_library chromeos=0 OS=android gyp_managed_install=1 create_standalone_apk=0" gclient runhooks'
 alias gasan='GYP_GENERATORS=ninja build/gyp_chromium -D asan=1 -D linux_use_tcmalloc=0 -D release_extra_cflags="-g" -D clang=1'
 alias gasand='GYP_GENERATORS=ninja build/gyp_chromium -D asan=1 -D linux_use_tcmalloc=0 -D release_extra_cflags="-g" -D clang=1'
 alias gaura='GYP_GENERATORS=ninja build/gyp_chromium -D use_aura=1'
