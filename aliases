@@ -29,6 +29,7 @@ alias bcut-sw='time ninja -C out/Release content_unittests && xvfb-run -s "-scre
 alias bd='time ninja -C out/Debug chrome && rd || notify-fail'
 alias bd2='time ninja -C out2/Debug chrome && rd2 || notify-fail'
 alias bdut='time ninja -C out/Release device_unittests && out/Release/device_unittests --gtest_filter="*Bluetooth*" || notify-fail'
+alias bduta='time ninja -C outandroid/Debug device_unittests device_unittests_apk && CHROMIUM_OUT_DIR=outandroid build/android/test_runner.py gtest -s device_unittests --gtest_filter="*"; notify'
 alias bdutd='time ninja -C out/Debug device_unittests && out/Debug/device_unittests --gtest_filter="*Bluetooth*" || notify-fail'
 alias bblink-layout='time ninja -C out/Release blink_tests && blink/tools/run_layout_tests.sh bluetooth && notify'
 alias bblink-layout-pointerlockfullscreen='time ninja -C out/Release blink_tests && blink/tools/run_layout_tests.sh pointer-lock http/tests/pointer-lock fullscreen http/tests/fullscreen fast/dom/navigator-detached-no-crash.html && notify'
