@@ -34,6 +34,13 @@ if [[ $PROMPT_COMMAND != *"history -a"* ]]; then
 fi
 HISTSIZE=10000
 
+# Remove call to update_terminal_cwd if it doesn't exist.
+#   (it is defined by Mac OSX etc/bashrc, but not if terminal is screen)
+if [ "$(type -t update_terminal_cwd)" != function ]; then
+  export PROMPT_COMMAND="${PROMPT_COMMAND/ update_terminal_cwd;/}"
+fi
+
+
 export GYP_GENERATORS='ninja'
 
 export P4CONFIG=.p4config
