@@ -1,7 +1,7 @@
 alias agdb='CHROMIUM_OUT_DIR=outandroid adb_gdb_chrome_shell'
 alias alias-update=". $BASH_CONFIG_DIR/aliases"
 alias aliasupdate="alias-update"
-alias alc='adb logcat -v time chromium:v cr.Bluetooth:v *:f'
+alias alc='adb logcat -v time chromium:v cr.Bluetooth:v *:f | grep -E " |[Bb]luetooth"'
 alias alcc="adb logcat -c && alc"
 alias astack="adb logcat -d | CHROMIUM_OUT_DIR=outandroid third_party/android_platform/development/scripts/stack"
 alias b='time ninja -C out/Release chrome && r || notify-fail'
