@@ -91,3 +91,5 @@ alias rd2='if [ -e out2/Debug/chrome ]; then out2/Debug/chrome; else out2/Debug/
 alias st='/opt/sublime_text/sublime_text'
 alias vsmulti='while read x; do vs $x; done'
 alias www-permissions='~/scheib/www/permisions.sh'
+alias bclank='time ninja -C out/Debug chrome_public_apk || notify-fail'
+alias dclank='build/android/adb_install_apk.py --apk ChromePublic.apk --debug || notify-fail'
