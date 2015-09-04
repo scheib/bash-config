@@ -1,4 +1,5 @@
 alias agdb='CHROMIUM_OUT_DIR=outandroid adb_gdb_chrome_shell'
+alias aenv='. build/android/envsetup.sh'
 alias alc='adb shell setprop log.tag.cr.Bluetooth VERBOSE && adb logcat -v time chromium:v cr.Bluetooth:v AndroidRuntime:* Binder:w System.err:* DEBUG:* *:f | grep -E " |[Bb]luetooth"'
 alias alcc="adb logcat -c && alc"
 alias aliasupdate="alias-update"
