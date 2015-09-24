@@ -1,7 +1,7 @@
 alias agdb='CHROMIUM_OUT_DIR=outandroid adb_gdb_chrome_shell'
 alias aenv='. build/android/envsetup.sh'
-alias alc='adb logcat -v time chromium:v cr.Bluetooth:v AndroidRuntime:* Binder:w BtGatt.GattService:* BluetoothGatt:* BluetoothRemoteDevices:* bt_btif_config:* bt_btif:* bt_btif_dm:* bt_smp:* System.err:* DEBUG:* *:f | grep -E " |[Bb]luetooth|cr.Bluetooth|BtGatt|BluetoothGatt|bt_btif_config"'
-alias alcall='adb logcat -v time chromium:v cr.Bluetooth:v AndroidRuntime:* Binder:w System.err:* DEBUG:* | grep -E " |[Bb]luetooth|cr.Bluetooth|BtGatt|BluetoothGatt|bt_btif_config"'
+alias alc='adb logcat -v time chromium:v cr_Bluetooth:v AndroidRuntime:* Binder:w BtGatt.GattService:* BluetoothGatt:* BluetoothRemoteDevices:* bt_btif_config:* bt_btif:* bt_btif_dm:* bt_smp:* System.err:* DEBUG:* *:f | grep -E " |[Bb]luetooth|cr_Bluetooth|BtGatt|BluetoothGatt|bt_btif_config"'
+alias alcall='adb logcat -v time chromium:v cr_Bluetooth:v AndroidRuntime:* Binder:w System.err:* DEBUG:* | grep -E " |[Bb]luetooth|cr_Bluetooth|BtGatt|BluetoothGatt|bt_btif_config"'
 alias alcc="adb logcat -c && alc"
 alias aliasupdate="alias-update"
 alias alias-update=". $BASH_CONFIG_DIR/aliases"
