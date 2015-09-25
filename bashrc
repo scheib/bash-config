@@ -40,6 +40,8 @@ if [ "$(type -t update_terminal_cwd)" != function ]; then
   export PROMPT_COMMAND="${PROMPT_COMMAND/ update_terminal_cwd;/}"
 fi
 
+# Supress "An instance of Visual SlickEdit is already being displayed..."
+export VSLICKXNOPLUSNEWMSG=1
 
 export GYP_GENERATORS='ninja'
 
@@ -61,7 +63,6 @@ if [ ! $BASH_CONFIG_SET ]; then
     PATH="$PATH":~/gsutil
   fi
 
-  export VSLICKXNOPLUSNEWMSG=1
   if [ -d /opt/slickedit/bin ]; then
     PATH="$PATH":/opt/slickedit/bin
   fi
