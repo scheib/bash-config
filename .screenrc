@@ -1,0 +1,10 @@
+#____scheib
+
+# from julian, in linux reference doc
+#hardstatus alwayslastline "%{=b}%{G} Screen(s): %{b}%w %=%{kG}%C%A  %D, %M/%d/%Y "
+hardstatus alwayslastline '%{= kG}%H: %{w}%?%-w%?%{KG}%n*%t%{-}%?%+w%?%?%{-}    %=[ %{K}%l %{-}][ %{B}%Y-%m-%d%{-} %{W    }%c %{-}]'
+
+termcapinfo xterm* ti@:te@
+
+# scrollback default is 1024, increase:
+defscrollback 10000
