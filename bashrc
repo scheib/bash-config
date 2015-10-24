@@ -15,11 +15,13 @@ if [ -f $BASH_CONFIG_DIR/screen    ]; then . $BASH_CONFIG_DIR/screen;    fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-# Mac's Brew location: (after brew install bash_completion)
-if [ -f /usr/local/bin/brew ]; then
-  if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-  fi
+
+# Mac git installation requires sourcing these:
+if [ -f /usr/local/git/contrib/completion/git-prompt.sh ]; then
+  . /usr/local/git/contrib/completion/git-prompt.sh
+fi
+if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
+  . /usr/local/git/contrib/completion/git-completion.bash
 fi
 
 # Prompt
