@@ -17,6 +17,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Mac git installation requires sourcing these:
+# After homebrew: "brew install git" as of 2016-01-15:
+if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
+  . /usr/local/etc/bash_completion.d/git-prompt.sh
+fi
+# Pre El Capitan Mac:
 if [ -f /usr/local/git/contrib/completion/git-prompt.sh ]; then
   . /usr/local/git/contrib/completion/git-prompt.sh
 fi
