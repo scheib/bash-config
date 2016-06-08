@@ -1,14 +1,14 @@
 alias aenv='. build/android/envsetup.sh'
-alias agdb='CHROMIUM_OUT_DIR=outandroid adb_gdb_chrome_shell'
+alias agdb='CHROMIUM_OUT_DIR=outa/Debug adb_gdb_chrome_shell'
 alias alc='adb logcat -v time chromium:v cr_Bluetooth:v AndroidRuntime:* Binder:w BtGatt.GattService:* BluetoothGatt:* BluetoothRemoteDevices:* bt_btif_config:* bt_btif:* bt_btif_dm:* bt_smp:* System.err:* DEBUG:* *:f | grep -Ei " |bluetooth|BluetoothGatt|bt_btif_config|BtGatt|cr_Bluetooth|error|fail|failed|failure"'
 alias alcall='adb logcat -v time chromium:v cr_Bluetooth:v AndroidRuntime:* Binder:w System.err:* DEBUG:* | grep -Ei " |bluetooth|BluetoothGatt|bt_btif_config|BtGatt|cr_Bluetooth|error|fail|failed|failure"'
 alias alcc="adb logcat -c && alc"
 alias aliasupdate="alias-update"
 alias alias-update=". $BASH_CONFIG_DIR/aliases"
 alias android-command-line-flags='echo --enable-web-bluetooth --vmodule=*bluetooth*=7 --allow-file-access-from-files'
-alias astack="adb logcat -d | CHROMIUM_OUT_DIR=outandroid third_party/android_platform/development/scripts/stack"
+alias astack="adb logcat -d | CHROMIUM_OUT_DIR=outa/Debug third_party/android_platform/development/scripts/stack"
 alias b2='time ninja -C out2/Release chrome && r2 || notify-fail'
-alias bacontent-shell='time CHROMIUM_OUT_DIR=outandroid ninja -C outandroid/Debug content_shell_apk || notify-fail'
+alias bacontent-shell='time CHROMIUM_OUT_DIR=outa/Debug ninja -C outa/Debug content_shell_apk || notify-fail'
 alias baf='time ninja -C outa/Debug chrome_public_apk && daf || notify-fail'
 alias ball2='time ninja -C out2/Release chrome components_unittests content_unittests content_browsertests device_unittests unit_tests browser_tests || notify-fail'
 alias balld2='time ninja -C out2/Debug chrome components_unittests content_unittests content_browsertests device_unittests unit_tests browser_tests || notify-fail'
@@ -37,7 +37,7 @@ alias bcut-sw='time ninja -C out/Release content_unittests && xvfb-run -s "-scre
 alias bcut='time ninja -C out/Release components_unittests && out/Release/components_unittests --gtest_filter="*Bluetooth*" || notify-fail'
 alias bd2='time ninja -C out2/Debug chrome && rd2 || notify-fail'
 alias bd='time ninja -C out/Debug chrome && rd || notify-fail'
-alias bdutar='time CHROMIUM_OUT_DIR=outandroid ninja -C outandroid/Release device_unittests device_unittests_apk && CHROMIUM_OUT_DIR=outandroid build/android/test_runner.py gtest -t 5 -s device_unittests --gtest_filter="*" -t 5 --num_retries 0 --release; notify'
+alias bdutar='time CHROMIUM_OUT_DIR=outa/Release ninja -C outa/Release device_unittests device_unittests_apk && CHROMIUM_OUT_DIR=outa/Release build/android/test_runner.py gtest -t 5 -s device_unittests --gtest_filter="*" -t 5 --num_retries 0 --release; notify'
 alias bduta='time ninja -C outa/Debug device_unittests && CHROMIUM_OUT_DIR=outa build/android/test_runner.py gtest -t 5 -s device_unittests --gtest_filter="*" --num_retries 0 || notify-fail'
 alias bdutd='time ninja -C out/Debug device_unittests && out/Debug/device_unittests --gtest_filter="*Bluetooth*" || notify-fail'
 alias bdut='time ninja -C out/Release device_unittests && out/Release/device_unittests --gtest_filter="*Bluetooth*" || notify-fail'
