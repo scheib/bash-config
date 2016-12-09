@@ -1,4 +1,5 @@
 # Place the following in ~/.bashrc
+# and verify that ~/.bash_profile calls . ~/.bashrc
 #
 #BASH_CONFIG_DIR=~/bash-config
 #if [ -f $BASH_CONFIG_DIR/bashrc ]; then
