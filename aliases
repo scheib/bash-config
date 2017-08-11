@@ -61,7 +61,7 @@ alias but-sw='time ninja -C out/Release unit_tests && xvfb-run -s "-screen 0 102
 alias clang-off='unset CC CXX'
 alias clang-on='export CC=clang; export CXX=clang++; echo $PATH | grep -q "llvm-build/Release+Asserts" || export PATH=~/chromium/src/third_party/llvm-build/Release+Asserts/bin:$PATH'
 alias containerissues='pushd src/py_issue_tracker/src && (./crbugtotrix.py -q Cr:Platform-Apps-Container --no-closed-bugs -s 0Ah8PJXs-5E92dEZ0dmdqbmw1c0FMTXUtMEhHNHZ5cVE; popd)'
-alias da='CHROMIUM_OUT_DIR=outa/Debug outa/Debug/bin/install_chrome_public_apk_incremental -v || notify-fail'
+alias da='CHROMIUM_OUT_DIR=outa/Debug outa/Debug/bin/chrome_public_apk install --incremental -v || notify-fail'
 alias daf='CHROMIUM_OUT_DIR=outa/Debug build/android/adb_install_apk.py --apk ChromePublic.apk --debug || notify-fail'
 alias dclank='build/android/adb_install_apk.py --apk ChromePublic.apk --debug || notify-fail'
 alias g2='GYP_GENERATOR_FLAGS="output_dir=out2" GYP_DEFINES="use_goma=1 clang=1 component=shared_library dcheck_always_on=1 chromeos=0" gclient runhooks'
