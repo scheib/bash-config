@@ -58,6 +58,9 @@ export P4DIFF=/home/build/public/google/tools/p4diff
 export P4MERGE=/home/build/public/eng/perforce/mergep4.tcl 
 export P4EDITOR=$EDITOR
 
+# Chromium development tool GOMA
+export GOMA_DIR=$HOME/src/goma
+
 if [ ! $BASH_CONFIG_SET ]; then
   if [ -d ~/bin ]; then
     PATH="$PATH":~/bin
