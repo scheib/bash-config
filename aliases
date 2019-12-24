@@ -78,8 +78,8 @@ alias lupdate='git branch -D lkgr 1>/dev/null 2&>1; git lkgr | xargs git branch 
 alias ma='my_activity.py --output-format="- [{title}]({url})" | sed -e "s/^Changes:$/Changes:\n/g" | sed -e "s/^Reviews:$/Reviews:\n/g" | sed -e "s/^Issues:$/Issues:\n/g"'
 alias mount-tmpfs-out='sudo mount -t tmpfs -o size=50% tmpfs out'
 alias n='notify'
-alias notify-fail='(notify-send -i $BASH_CONFIG_DIR/icons/red.png "FAIL"; paplay /usr/share/sounds/ubuntu/stereo/system-ready.ogg; exit 1)'
-alias notify-ok='(notify-send -i $BASH_CONFIG_DIR/icons/green.png "OK"; paplay /usr/share/sounds/ubuntu/stereo/message.ogg; exit 0)'
+alias notify-fail='(notify-send -i $BASH_CONFIG_DIR/icons/red.png "FAIL"; paplay /usr/share/sounds/freedesktop/stereo/complete.oga; exit 1)'
+alias notify-ok='(notify-send -i $BASH_CONFIG_DIR/icons/green.png "OK"; paplay /usr/share/sounds/freedesktop/stereo/message.oga; exit 0)'
 alias notify='test $? -eq 0 && notify-ok || notify-fail'
 alias p="pushd +1"
 alias r2='if [ -e out2/Release/chrome ]; then out2/Release/chrome `run-flags`; else out2/Release/Chromium.app/Contents/MacOS/Chromium; fi'
