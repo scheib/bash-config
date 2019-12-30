@@ -1,4 +1,4 @@
-if [ "$TERM" = "screen" ]; then
+if [[ "$TERM" = "screen"* ]]; then
   screen_set_window_title () {
     local HPWD="$PWD"
     case $HPWD in
