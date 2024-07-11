@@ -37,10 +37,18 @@ export EDITOR='vim'
 
 export LESS=RSJwij.3
 
+
+# Command line history:
+# Append to the history file, don't overwrite it
+shopt -s histappend
+# Save after each command
 if [[ $PROMPT_COMMAND != *"history -a"* ]]; then
   export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 fi
-HISTSIZE=10000
+# Ignore repeated entries, and set in memory and in file limits.
+HISTCONTROL=ignoredups
+HISTSIZE=2000
+HISTFILESIZE=2000
 
 # Remove call to update_terminal_cwd if it doesn't exist.
 #   (it is defined by Mac OSX etc/bashrc, but not if terminal is screen)
