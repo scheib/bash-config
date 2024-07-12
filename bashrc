@@ -71,8 +71,8 @@ if [ ! $BASH_CONFIG_SET ]; then
     PATH="$PATH":~/bin
   fi
 
-  if [ -d ~/src/depot_tools ]; then
-    PATH="$PATH":~/src/depot_tools
+  if [ -d ~/depot_tools ]; then
+    PATH="$PATH":~/depot_tools
   fi
 
   if [ -d ~/gsutil ]; then
