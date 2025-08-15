@@ -67,6 +67,7 @@ export P4MERGE=/home/build/public/eng/perforce/mergep4.tcl
 export P4EDITOR=$EDITOR
 
 if [ ! $BASH_CONFIG_SET ]; then
+  export BASH_CONFIG_SET=true
   if [ -d ~/bin ]; then
     PATH="$PATH":~/bin
   fi
@@ -83,4 +84,8 @@ if [ ! $BASH_CONFIG_SET ]; then
     PATH="$PATH":/opt/slickedit/bin
   fi
 fi
-export BASH_CONFIG_SET=true
+
+# Google binaries
+if [ -d /google/bin ]; then
+  alias gemini='/google/bin/releases/gemini-cli/tools/gemini'
+fi

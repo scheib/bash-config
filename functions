@@ -36,3 +36,5 @@ findi () {
     find $path -maxdepth 1 -iname "$1" 2> /dev/null
 }
 
+
+
