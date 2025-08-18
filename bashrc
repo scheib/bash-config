@@ -59,8 +59,6 @@ fi
 # Supress "An instance of Visual SlickEdit is already being displayed..."
 export VSLICKXNOPLUSNEWMSG=1
 
-export GYP_GENERATORS='ninja'
-
 export P4CONFIG=.p4config
 export P4DIFF=/home/build/public/google/tools/p4diff
 export P4MERGE=/home/build/public/eng/perforce/mergep4.tcl 
@@ -88,4 +86,10 @@ fi
 # Google binaries
 if [ -d /google/bin ]; then
   alias gemini='/google/bin/releases/gemini-cli/tools/gemini'
+fi
+
+# Google Cloudtop
+if [[ "$(hostname)" == *.c.googlers.com ]]; then
+  # go/chrome-linux-build: make depot_tools skip GCE authentication.
+  export SKIP_GCE_AUTH_FOR_GIT=1
 fi
