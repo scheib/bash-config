@@ -85,7 +85,8 @@ fi
 
 # Google binaries
 if [ -d /google/bin ]; then
-  alias gemini='/google/bin/releases/gemini-cli/tools/gemini'
+  # Avoid incorrect colors in screen by clearing colorterm
+  alias gemini='COLORTERM= /google/bin/releases/gemini-cli/tools/gemini'
 fi
 
 # Google Cloudtop
