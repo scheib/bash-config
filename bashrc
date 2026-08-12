@@ -94,3 +94,9 @@ if [[ "$(hostname)" == *.c.googlers.com ]]; then
   # go/chrome-linux-build: make depot_tools skip GCE authentication.
   export SKIP_GCE_AUTH_FOR_GIT=1
 fi
+
+# Chrome OS Terminal (HTerm) automatically sends a Ctrl-D (EOF) when clicking [X] to close a window.
+# When combined with roadwarrior SSH multiplexing, this keystroke is rapidly forwarded to the
+# active tmux pane, causing the shell inside the pane to gracefully exit and die.
+# Setting IGNOREEOF=1000 conceptually disables Ctrl-D from ever exiting the shell.
+export IGNOREEOF=1000
